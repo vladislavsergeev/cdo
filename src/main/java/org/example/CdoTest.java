@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 public class CdoTest {
 
@@ -28,5 +29,13 @@ public class CdoTest {
         cdoPage.typePassword("//*[@name='password']");
         cdoPage.waitForElement("//*[@class='btn btn-primary btn-block mt-3']");
         cdoPage.waitForElement("//*[@class='card-img dashboard-card-img']");
+
+        try {
+            TimeUnit.HOURS.sleep(3);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        driver.quit();
+
     }
 }
